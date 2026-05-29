@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Story_Script, Inter, Geist_Mono  } from "next/font/google";
 import "./globals.css";
-
+import NavBar from "./components/navbar";
 
 const storyScript = Story_Script({
-  variable: "--font-story-script",
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: "400"
 });
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 const interFont = Inter({
-  variable: "--font-inter",
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -32,9 +32,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${storyScript.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${storyScript.variable} ${interFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+
+      <body className="min-h-full flex flex-col">
+        <NavBar/>
+        {children}
+
+      </body>
+      
     </html>
   );
 }
