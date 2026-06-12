@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Story_Script, Inter, Geist_Mono  } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/navbar";
-
+import Footer from "./components/footer"
 const storyScript = Story_Script({
   variable: "--font-heading",
   subsets: ["latin"],
@@ -36,8 +36,15 @@ export default function RootLayout({
     >
 
       <body className="min-h-full flex flex-col">
-        <NavBar/>
-        {children}
+           <NavBar/>
+
+        <main className="flex-1">
+          {children}
+        </main>
+
+        <Footer/>
+
+
 
       </body>
       

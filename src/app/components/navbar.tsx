@@ -2,9 +2,9 @@ import Link from "next/link"
 
 export default function NavBar() {
   return (
-    <nav className="flex justify-between items-center gap-6 w-full px-6 py-4 bg-[#C2E2BD]">
+    <nav className="fixed z-10 flex justify-between items-center gap-6 w-full px-6 py-4 bg-[#C2E2BD]">
       <div>Logo</div>
-      <h1 className="text-5xl">
+      <h1 className="text-5xl text-bold">
         Schroeder Lofts
       </h1>
       <div className="flex gap-6 text-[#2A3D45] text-xl">

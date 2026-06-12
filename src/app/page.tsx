@@ -1,14 +1,72 @@
-import Image from "next/image";
+import Image from "next/image"
+import "./globals.css";
+import rainbow from "./assets/rainbow.jpg";
+import Carousel from "./components/carousel";
+
+const cedarImages = [
+  '/images/cedar/bathroom.jpg'
+
+]
 export default function Home() {
   return (
-    <div>
-      <Image
-          src="/rainbow.jpg"
-          alt="rainbow background image"
-          width={60}
-          height={60}
-        />
+  
+    <div className="w-full h-full bg-[#F6FEE7] ">
+      <div className="rounded py-20">
+          <div className=" relative overflow-hidden h-[700px] w-full ">
+            <Image
+              src={rainbow}
+              alt="rainbow background image"
+              priority
+              className="w-full h-auto object-cover rounded-xxl"
+            />
+            <h2 className="absolute bottom-8 left-8 z-5 text-5xl md:text-5xl lg:text-8xl font-bold text-[#C2E2BD]">
+              Welcome to the Kootenays!
+            </h2>
+          </div>
+      </div>
+      <div className="relative">
+          <p>
+            We have two private suites to enjoy.. the Cedar Loft & Maple Loft.
+          </p>
+          <p>
+            Rent one suite for a private, restful experience - or both if you need additional space for friends and family.
+          </p>
+          <p>
+            Each suite is 650 sqft., can accommodate 4 guests & 
+            includes a full service kitchen w/ eating bar/workspace, 
+            living room, private bedroom & bath w/ air conditioning. 
+
+            Both suites include 
+            pull out sofas to accommodate additional guests 
+            & share access to the private 
+            laundry room and all amenities.
+
+            Located in the tranquil setting of Schroeder Creek 
+            community on scenic Kootenay Lake.
+            
+            Includes access to: our private backyard that backs onto a 
+            forested area that features plentiful space for lounging, 
+            picnic table, BBQ, hot tub, & fire pit w/ chairs.
+
+            Enjoy a day on the lake w/ 2 kayaks and all the necessary
+            beach gear for a fabulous relaxing day!
+
+            Close to the amenities of Kaslo, 
+            but far enough to 'get away from it all!’
+            
+            Coming in for a special occasion?
+            Contact us to make your 
+            one-of-a-kind Kootenay Lake memories!
+          </p>
+          </div>
+          <div>
+            <Carousel images={cedarImages}/>
+          </div>
+          
+     
     </div>
+    
+
 
 
 
