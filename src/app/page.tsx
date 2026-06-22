@@ -2,12 +2,12 @@ import Image from "next/image";
 import "./globals.css";
 import rainbow from "./assets/rainbow.jpg";
 import Carousel from "./components/carousel";
-
+import Amenities from "./components/amenities";
 const cedarImages = ["/images/cedar/bathroom.jpg"];
 export default function Home() {
   return (
     <div className="w-full h-full bg-[#F6FEE7] ">
-      <div className="rounded py-20">
+      <div className="rounded py-10">
         <div className=" relative overflow-hidden h-[700px] w-full ">
           <Image
             src={rainbow}
@@ -15,34 +15,51 @@ export default function Home() {
             priority
             className="w-full h-auto object-cover rounded-xxl"
           />
-          <h2 className="absolute bottom-8 left-8 z-5 text-5xl md:text-5xl lg:text-8xl font-bold text-[#C2E2BD]">
+          {/* <h2 className="absolute bottom-8 left-8 z-5 text-5xl md:text-5xl lg:text-8xl font-bold text-[#C2E2BD]">
             Welcome to the Kootenays!
-          </h2>
+          </h2> */}
         </div>
       </div>
-      <div className="relative">
-        <p>
-          We have two private suites to enjoy.. the Cedar Loft & Maple Loft.
+      <section className="max-w-4xl mx-auto px-4 py-1 text-xl">
+        <h1 className="text-5xl text-bold mb-6">Welcome to the Kootenays!</h1>
+
+        <p className="text-xl leading-relaxed mb-6">
+          We offer two private suites: the <strong>Cedar Loft</strong> and
+          <strong> Maple Loft</strong>. Rent one suite for a peaceful retreat,
+          or reserve both to accommodate family and friends.
         </p>
-        <p>
-          Rent one suite for a private, restful experience - or both if you need
-          additional space for friends and family.
+
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <div className="rounded-lg p-5">
+            <h3 className="font-semibold mb-2">
+              Spacious & Comfortable
+            </h3>
+            <p>
+              Each 650 sq. ft. suite accommodates up to 4 guests and includes a
+              full kitchen, living room, private bedroom, bathroom, and air
+              conditioning.
+            </p>
+          </div>
+
+          <div className=" rounded-lg p-5">
+            <h3 className="font-semibold mb-2">Relax & Explore</h3>
+            <p>
+              Enjoy a hot tub, fire pit, BBQ, kayaks, beach gear, and a peaceful
+              backyard bordering a forested area.
+            </p>
+          </div>
+        </div>
+
+        <p className="leading-relaxed">
+          Located in the tranquil Schroeder Creek community on beautiful
+          Kootenay Lake. Close to the amenities of Kaslo, 
+          but far enough to 'get away from it all!’ Planning a special
+          occasion? Contact us and let us help create unforgettable Kootenay
+          Lake memories.
         </p>
-        <p>
-          Each suite is 650 sqft., can accommodate 4 guests & includes a full
-          service kitchen w/ eating bar/workspace, living room, private bedroom
-          & bath w/ air conditioning. Both suites include pull out sofas to
-          accommodate additional guests & share access to the private laundry
-          room and all amenities. Located in the tranquil setting of Schroeder
-          Creek community on scenic Kootenay Lake. Includes access to: our
-          private backyard that backs onto a forested area that features
-          plentiful space for lounging, picnic table, BBQ, hot tub, & fire pit
-          w/ chairs. Enjoy a day on the lake w/ 2 kayaks and all the necessary
-          beach gear for a fabulous relaxing day! Close to the amenities of
-          Kaslo, but far enough to 'get away from it all!’ Coming in for a
-          special occasion? Contact us to make your one-of-a-kind Kootenay Lake
-          memories!
-        </p>
+      </section>
+      <div className="rounded-lg text-center bg-[#F58728] m-8 max-w-4xl mx-auto items-center">
+          <h2 className="text-lg text-white p-2">Long term stays allowed!</h2>
       </div>
       <div>
         <Carousel images={cedarImages} />
@@ -50,42 +67,8 @@ export default function Home() {
       <div>
         <Carousel images={cedarImages} />
       </div>
-      <div></div>
-      <h1 className="text-xxl">Amenities</h1>
-      <div className="relative bg-[#79A9D1] text-white m-10 p-5">
-        <h3>GENERAL</h3>
-        <ul>
-          <li>Air conditioning</li>
-          <li>Free parking</li>
-          <li>Wifi</li>
-          <li>TV</li>
-          <li>Board games</li>
-          <li>Books and reading material</li>
-        </ul>
-        <h3>KITCHEN</h3>
-        <ul>
-          <li>Coffee machine with coffee and tea pods</li>
-          <li>Pots and pans</li>
-          <li>bowls, cups, plates, kitchen utensils</li>
-          <li>Ice trays</li>
-          <li>Hot water kettle</li>
-          <li>Microwave</li>
-          <li>Oven</li>
-          <li>stove top</li>
-          <li>Wine glasses</li>
-        </ul>
-        <h3>LAUNDRY</h3>
-        <ul>
-          <li>Washer/dryer unit</li>
-          <li>laundry detergent, dryer sheets</li>
-        </ul>
-        <h3>BEDROOM</h3>
-        <ul>
-          <li>Bedding</li>
-          <li>Dresser & closet</li>
-          <li>Extra blankets/pillows</li>
-        </ul>
-        <h3></h3>
+      <div>
+        <Amenities />
       </div>
     </div>
   );
