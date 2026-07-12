@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import './contact.css';
+import '../styles/contact.css';
 import emailjs from "emailjs-com"
 export default function Contact() {
     const [form, setForm] = useState({
@@ -40,7 +40,7 @@ export default function Contact() {
 
     return (
         <section className="contact-container">
-            <h1>Lets Chat!</h1>
+            <h1>Any Questions?</h1>
             <form onSubmit={handleSubmit}>
                 <input className="nameInput"
                     type="text"

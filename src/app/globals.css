@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-heading: #ff9c45;
-  --color-body: #2A3D45;
+  --background: #f6fee7;
+  --foreground: #284042;
+  --color-heading: #1f4d49;
+  --color-body: #31484a;
+  --color-surface: rgba(255, 255, 255, 0.44);
+  --color-surface-strong: #CFD7C1;
+  --color-accent: #f58728;
+  --color-accent-strong: #e16f1a;
+  --color-accent-soft: rgba(245, 135, 40, 0.18);
+  --color-nav: #2f5d7d;
+  --color-nav-text: #f6fee7;
+  --color-footer: #5f856e;
 }
 
 
@@ -16,6 +24,10 @@ body {
 
 h1 {
   font-family: var(--font-heading);
+}
+
+h2,
+h3 {
   color: var(--color-heading);
 }
 
