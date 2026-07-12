@@ -19,7 +19,7 @@ const Carousel = ({ images }: CarouselProps) => {
           {images.map((src, i) => (
             <div
               key={i}
-              className="embla__slide relative h-[600px] flex-[0_0_100%] "
+              className="embla__slide relative mx-auto flex-[0_0_100%] "
             >
               <img
                 src={src}

@@ -1,8 +1,10 @@
 import Image from "next/image";
 import "./globals.css";
+import "@/styles/contact.css";
 import rainbow from "./assets/rainbow.jpg";
 import Carousel from "./components/carousel";
 import Amenities from "./components/amenities";
+import Contact from "./components/contact";
 //public\images\cedar\bathroom.jpeg
 const cedarImages = [
   "/images/cedar/bathroom.jpeg",
@@ -25,10 +27,11 @@ export default function Home() {
           </h2> */}
         </div>
       </div>
+      <div className="grid md:grid-cols-2">
       <section className="max-w-4xl mx-auto px-4 py-1 text-xl">
         <h1 className="text-5xl font-bold mb-6">Welcome to the Kootenays!</h1>
 
-        <p className="text-xl leading-relaxed mb-6">
+        <p className="text-lg leading-relaxed mb-6">
           We offer two private suites: the <strong>Cedar Loft</strong> and
           <strong> Maple Loft</strong>. Rent one suite for a peaceful retreat,
           or reserve both to accommodate family and friends.
@@ -60,6 +63,10 @@ export default function Home() {
           help create unforgettable Kootenay Lake memories.
         </p>
       </section>
+      <section>
+            <Contact />
+      </section>
+      </div>
       <div className="rounded-lg text-center bg-[#F58728] m-8 max-w-4xl mx-auto items-center">
         <h2 className="text-lg text-white p-2">Long term stays allowed!</h2>
       </div>
