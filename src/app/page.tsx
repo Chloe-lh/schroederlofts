@@ -30,7 +30,7 @@ export default function Home() {
           <section className="intro-copy text-xl">
             <h1 className="page-title">Welcome to the Kootenays!</h1>
 
-            <p className="text-lg leading-relaxed">
+            <p className="leading-relaxed">
               We offer two private suites: the <strong>Cedar Loft</strong> and
               <strong> Maple Loft</strong>. Rent one suite for a peaceful retreat,
               or reserve both to accommodate family and friends.
@@ -38,7 +38,7 @@ export default function Home() {
 
             <div className="feature-grid">
               <div className="feature-card">
-                <h3 className="font-semibold mb-2">Spacious & Comfortable</h3>
+                <h3 className="font-semibold mb-2 text-2xl">Spacious & Comfortable</h3>
                 <p>
                   Each 650 sq. ft. suite accommodates up to 4 guests and includes a
                   full kitchen, living room, private bedroom, bathroom, and air
@@ -47,7 +47,7 @@ export default function Home() {
               </div>
 
               <div className="feature-card">
-                <h3 className="font-semibold mb-2">Relax & Explore</h3>
+                <h3 className="font-semibold mb-2 text-2xl">Relax & Explore</h3>
                 <p>
                   Enjoy a hot tub, fire pit, BBQ, kayaks, beach gear, and a peaceful
                   backyard bordering a forested area.

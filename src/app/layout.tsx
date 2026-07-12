@@ -4,13 +4,13 @@ import "./globals.css";
 import NavBar from "./components/navbar";
 import Footer from "./components/footer"
 const storyScript = Story_Script({
-  variable: "--font-heading",
+  variable: "--font-subheading",
   subsets: ["latin"],
   weight: "400"
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-heading",
   subsets: ["latin"],
 });
 
