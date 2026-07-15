@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import '../styles/contact.css';
-import emailjs from "emailjs-com"
+
 export default function Contact() {
     const [form, setForm] = useState({
         name: "",
@@ -17,25 +17,27 @@ export default function Contact() {
             [name]: value,
         }));
     };
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        emailjs.send(
-            "service_yis4ztb",
-            "template_mw76eec",
-            form,
-            "00aBhkGZ7c8MH7fw8"
-        )
-        .then(
-            (result) => {
-                console.log("Message submitted");
-                alert("Message sent!");
-                setForm({name: "", email:"", message:""});
+        const response = await fetch("/api/contact", {
+            method:"POST",
+            headers: {
+                "Content-Type":"application/json",
             },
-            (error) => {
-                console.error("Error sending email: ", error.text);
-                alert("Failed to send message");
-            }
-        )
+            body: JSON.stringify(form)
+        });
+
+        const data = await response.json();
+
+        if(data.success){
+            alert("Message sent!");
+            setForm({name: "", email:"", message:""});
+        }else{
+            alert("hmm.. something went wrong");
+        }
+        
+            
+            
     }
 
     return (

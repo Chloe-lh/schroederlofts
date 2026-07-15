@@ -70,7 +70,7 @@ export default function Home() {
       </div>
 
       <div className="notice">
-        <h2 className="text-lg">Long term stays allowed!</h2>
+        <p className="text-lg">Long term stays allowed!</p>
       </div>
 
       <div className="gallery-section">
