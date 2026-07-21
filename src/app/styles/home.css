@@ -59,10 +59,9 @@
 .notice {
   width: min(100%, 1200px);
   margin: 1rem auto 2rem;
-  padding: 0.85rem 1rem;
-  border-radius: 1rem;
+  padding: 2rem 1rem;
   text-align: center;
-  background: var(--color-accent);
+  background: var(--color-footer);
   color: var(--color-nav-text);
   box-shadow: 0 10px 20px rgba(245, 135, 40, 0.18);
 }
@@ -79,8 +78,9 @@
 
 .gallery-title {
   margin: 0 0 1rem;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(4rem, 4vw, 3rem);
   line-height: 1.1;
+  color:var(--color-orange)
 }
 
 .intro-copy strong {

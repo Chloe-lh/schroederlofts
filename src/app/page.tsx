@@ -69,8 +69,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="notice">
+      <div className="notice border-2 ">
         <p className="text-lg">Long term stays allowed!</p>
+        <p className="">Enjoy discounted weekly and monthly rates for extended stays. Contact us for more details</p>
       </div>
 
       <div className="gallery-section">

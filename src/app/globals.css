@@ -7,7 +7,7 @@
   --color-body: #31484a;
   --color-surface: rgba(255, 255, 255, 0.44);
   --color-surface-strong: #CFD7C1;
-  --color-accent: #f58728;
+  --color-orange: #f58728;
   --color-accent-strong: #e16f1a;
   --color-accent-soft: rgba(245, 135, 40, 0.18);
   --color-nav: #2f5d7d;
@@ -29,7 +29,6 @@ h1 {
 h2,
 h3 {
   font-family: var(--font-subheading);
-  color: var(--color-heading);
 }
 
 .embla {
