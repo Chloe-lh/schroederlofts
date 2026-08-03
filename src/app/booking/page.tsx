@@ -5,7 +5,7 @@ const sql = neon(process.env.DATABASE_URL!);
 
 export default async function Home() {
   const bookings = await sql`
-    SELECT * FROM bookings
+    SELECT * FROM booking
   `;
 
   return (

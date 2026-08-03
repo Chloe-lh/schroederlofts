@@ -19,7 +19,7 @@ export default function NavBar() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex gap-3 text-lg">
-          <Link href="/">Book</Link>
+          <Link href="/booking">Book</Link>
           <Link href="/location">Location</Link>
           <Link href="/contact">Explore</Link>
         </div>
@@ -36,7 +36,7 @@ export default function NavBar() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="flex flex-col px-6 pb-4 md:hidden">
-          <Link href="/">Book</Link>
+          <Link href="/booking">Book</Link>
           <Link href="/location">Location</Link>
           <Link href="/contact">Explore</Link>
         </div>
