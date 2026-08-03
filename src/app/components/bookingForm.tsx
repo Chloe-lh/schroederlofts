@@ -36,33 +36,40 @@ export default function BookingForm (){
 
         <h1>Create Booking</h1>
         <form onSubmit={handleSubmit}>
+            <div className="mt-auto flex">
+
+            <h1>First Name</h1>
             <input
                 name="firstName"
                 value={form.firstName}
                 onChange={handleChange}
                 required
             />
+            <h1>Last Name</h1>
             <input
                 name="lastName"
                 value={form.lastName}
                 onChange={handleChange}
                 required
             />
+            </div>
+            <h1>Email Address</h1>
             <input
                 name="email"
-                value={form.firstName}
+                value={form.email}
                 onChange={handleChange}
                 required
             />
+            <h1>Phone Number</h1>
             <input
                 name=""
                 value={form.firstName}
                 onChange={handleChange}
-                required
             />
-        
-        
+
+            
         </form>
+
         </div>
 
     );

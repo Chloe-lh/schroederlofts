@@ -1,18 +1,18 @@
 // booking form
 import { neon } from "@neondatabase/serverless";
+import { prisma } from "@/lib/prisma";
+import BookingForm from "@/app/components/bookingForm"
 
-const sql = neon(process.env.DATABASE_URL!);
-
-export default async function Home() {
-  const bookings = await sql`
-    SELECT * FROM booking
-  `;
+export default async function BookingPage() {
+  const bookings = await prisma.booking.findMany();
 
   return (
+    <div className="m-100">
     <div>
-      {bookings.map((booking) => (
-        <p key={booking.id}>{booking.name}</p>
-      ))}
+      {JSON.stringify(bookings)}
     </div>
+    <BookingForm/>
+    </div>
+      
   );
 }
