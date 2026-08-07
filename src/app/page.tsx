@@ -6,6 +6,7 @@ import rainbow from "./assets/rainbow.jpg";
 import Carousel from "./components/carousel";
 import Amenities from "./components/amenities";
 import Contact from "./components/contact";
+import AirBnB from "./components/airbnb";
 //public\images\cedar\bathroom.jpeg
 const cedarImages = [
   "/images/cedar/bathroom.jpeg",
@@ -90,6 +91,7 @@ export default function Home() {
         </section>
 
         <Amenities />
+        <AirBnB/>
       </div>
     </div>
   );
