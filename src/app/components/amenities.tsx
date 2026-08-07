@@ -27,7 +27,6 @@ export default function Amenities() {
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Ice trays</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Pots and pans</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Bowls, cups, plates, utensils</li>
-            <li className="amenity-item"><CheckIcon className="amenity-icon" /> Wine glasses</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Microwave</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Oven</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Stove top</li>

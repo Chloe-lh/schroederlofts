@@ -28,7 +28,7 @@ export default function NavBar() {
         <button
           className="md:hidden text-3xl"
           onClick={() => setIsOpen(!isOpen)}
-        >
+        >s
           ☰
         </button> */}
       </div>
