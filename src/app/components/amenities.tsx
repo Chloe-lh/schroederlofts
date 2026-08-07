@@ -59,7 +59,6 @@ export default function Amenities() {
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Public Beach Access</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Beach Essentials</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Hot Tub</li>
-            <li className="amenity-item"><CheckIcon className="amenity-icon" /> Kayaks (x2) with Life Jackets</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Outdoor Dining Area</li>
           </ul>
         </section>

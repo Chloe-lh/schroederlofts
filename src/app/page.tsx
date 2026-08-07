@@ -41,8 +41,7 @@ export default function Home() {
                 <h3 className="font-semibold mb-2 text-2xl">Spacious & Comfortable</h3>
                 <p>
                   Each 650 sq. ft. suite accommodates up to 4 guests and includes a
-                  full kitchen, living room, private bedroom, bathroom, and air
-                  conditioning.
+                  full kitchen, living room, private bedroom, bathroom, and pullout couch.
                 </p>
               </div>
 
@@ -72,6 +71,9 @@ export default function Home() {
       <div className="notice border-2 ">
         <p className="text-lg">Long term stays allowed!</p>
         <p className="">Enjoy discounted weekly and monthly rates for extended stays. Contact us for more details</p>
+        <p className="text-lg">Want to rent both suites?</p>
+        <p className="">Planning a larger gathering? Rent both suites together and ask about our
+      discounted combined rate.</p>
       </div>
 
       <div className="gallery-section">

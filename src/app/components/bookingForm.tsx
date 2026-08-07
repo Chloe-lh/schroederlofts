@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react"
 
 export default function BookingForm (){
@@ -13,6 +12,7 @@ export default function BookingForm (){
             checkIn: "",
             checkOut: "",
             guests: 1,
+            message: ""
     });
 
     function handleChange(
@@ -64,6 +64,22 @@ export default function BookingForm (){
             <input
                 name=""
                 value={form.firstName}
+                onChange={handleChange}
+            />
+            <select>
+                <option value="Cedar Loft">Cedar Loft</option>
+                <option value="Maple Loft">Maple Loft</option>
+            </select>
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <h1>Special request or message</h1>
+            <input
+                name="message"
+                value={form.message}
                 onChange={handleChange}
             />
 

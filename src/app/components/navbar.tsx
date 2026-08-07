@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  //const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed z-10 w-full bg-(--color-nav) text-(--color-nav-text) shadow-lg">
@@ -18,30 +18,32 @@ export default function NavBar() {
         </h1>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex gap-3 text-lg">
+        {/* <div className="hidden md:flex gap-3 text-lg">
           <Link href="/booking">Book</Link>
           <Link href="/location">Location</Link>
           <Link href="/contact">Explore</Link>
-        </div>
+        </div> */}
 
-        {/* Mobile button */}
+        {/* Mobile button
         <button
           className="md:hidden text-3xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰
-        </button>
+        </button> */}
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="flex flex-col px-6 pb-4 md:hidden">
-          <Link href="/">Book</Link>
-          {/* <Link href="/booking">Book</Link> */}
-          <Link href="/location">Location</Link>
-          <Link href="/contact">Explore</Link>
-        </div>
-      )}
     </nav>
   );
 }
+
+
+// {/* Mobile menu */}
+//       {isOpen && (
+//         <div className="flex flex-col px-6 pb-4 md:hidden">
+//           <Link href="/">Book</Link>
+//           {/* <Link href="/booking">Book</Link> */}
+//           <Link href="/location">Location</Link>
+//           <Link href="/contact">Explore</Link>
+//         </div>
+//       )}
