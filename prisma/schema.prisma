@@ -19,6 +19,7 @@ model Booking {
   lastName  String
   email     String
   phone     String?
+  message   String?
 
   checkIn  DateTime
   checkOut DateTime
@@ -28,8 +29,6 @@ model Booking {
 
   unitId Int
   unit   Unit @relation(fields: [unitId], references: [id])
-
-  totalPrice Float
 
   createdAt DateTime @default(now())
 }
@@ -54,8 +53,5 @@ model BlockedDate {
 model Unit {
   id           Int           @id @default(autoincrement())
   name         String        @unique
-  description  String
-  maxGuests    Int
   bookings     Booking[]
-  blockedDates BlockedDate[]
 }

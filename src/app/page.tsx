@@ -50,8 +50,8 @@ export default function Home() {
               <div className="feature-card">
                 <h3 className="font-semibold mb-2 text-2xl">Relax & Explore</h3>
                 <p>
-                  Enjoy a hot tub, fire pit, BBQ, kayaks, beach gear, and a peaceful
-                  backyard bordering a forested area.
+                  Enjoy a hot tub, fire pit, BBQ, beach gear, and a peaceful
+                  backyard bordering a forested area. 
                 </p>
               </div>
             </div>
@@ -78,14 +78,14 @@ export default function Home() {
       <div className="gallery-section">
         <section className="gallery-block">
           <h2 className="gallery-title">Cedar Loft</h2>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <Carousel images={cedarImages} />
           </div>
         </section>
 
         <section className="gallery-block">
           <h2 className="gallery-title">Maple Loft</h2>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <Carousel images={cedarImages} />
           </div>
         </section>

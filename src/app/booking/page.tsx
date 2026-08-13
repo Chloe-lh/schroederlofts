@@ -7,10 +7,7 @@ export default async function BookingPage() {
   const bookings = await prisma.booking.findMany();
 
   return (
-    <div className="m-100">
-    <div>
-      {JSON.stringify(bookings)}
-    </div>
+    <div className="">
     <BookingForm/>
     </div>
       

@@ -1,0 +1,57 @@
+.booking-section{
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    margin-top: 7rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: var(--color-surface-strong);
+    border-radius: 1.25rem;
+    font:inherit;
+}
+h1{
+    font-weight:500;
+}
+.booking-section label{
+    font-weight:600;
+}
+.booking-section form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    
+}
+.form-group {
+    width: 100%;
+    padding: 0.25rem 0.25rem 0.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.booking-section input,
+.booking-section select,
+.booking-section textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.95rem 1.1rem;
+    border: 1px solid rgba(49, 72, 74, 0.18);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+    color: var(--color-body);
+    font: inherit;
+}
+
+.booking-section .message-box {
+    min-height: 8rem;
+    resize: vertical;
+}
+.booking-section button{
+    border-radius: 0.75rem;
+    padding: 1rem;
+    color:white;
+    background: var(--color-footer);
+}

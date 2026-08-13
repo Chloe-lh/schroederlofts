@@ -13,11 +13,11 @@ export default function Airbnb() {
       <section className="airbnb-section mx-auto max-w-3xl py-6">
         <h2 className="text-5xl font-semibold">We're also on Airbnb</h2>
 
-        <p className="mt-4 text-lg">
+        <p className="mt-4 text-xl">
           Check out verified reviews from our previous guests.
         </p>
 
-        <p className="mt-2 text-stone-600">
+        <p className="mt-2 test-lg text-stone-600">
           Booking directly through us saves everyone money. There are no Airbnb
           service fees or overhead, and we encourage local, direct bookings whenever
           possible.

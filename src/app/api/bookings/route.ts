@@ -14,70 +14,73 @@ export async function POST(request: Request){
             checkOut,
             guests,
             unitId,
-            totalPrice
+            message
             } = await request.json();
+            console.log("unitId received:", unitId);
         if (
             !firstName ||
             !lastName ||
             !email ||
-            !phone ||
             !checkIn ||
             !checkOut ||
-            !guests ||
-            !unitId ||
-            !totalPrice
+            !guests
         ) {
             return NextResponse.json(
                 { error: "Missing required fields." },
                 { status: 400 }
             );
         }
-        await prisma.booking.create({
+        const booking = await prisma.booking.create({
             data: {
                 firstName,
                 lastName,
                 email,
                 phone,
+                message,
+
                 checkIn: new Date(checkIn),
                 checkOut: new Date(checkOut),
+
                 guests,
-                totalPrice,
 
                 unit: {
                 connect: {
                     id: unitId,
                 },
                 },
+                
             },
             });
         return NextResponse.json(booking, { status:201 });
     }catch(err){
         console.error("Error creating booking: ", err)
-        return Response.json(
+        return NextResponse.json(
             {success:false},
             {status:500}
         )
     }
 }
-// Get ALL bookins
-export async function GET(){
-    try{
-        const bookings = prisma.booking.findMany({
+// Get ALL bookings
+export async function GET() {
+    try {
+        const bookings = await prisma.booking.findMany({
             include: {
                 unit: true,
-            }
-        })
-        return NextResponse.json(bookings, {
-            status:200,
+            },
         });
-    }catch(err){
-        return Response.json(
-            {success:false},
-            {status:500}
-        )
+
+        return NextResponse.json(bookings);
+    } catch (err) {
+        console.error("Error fetching bookings:", err);
+
+        return NextResponse.json(
+            { success: false, error: "Failed to fetch bookings" },
+            { status: 500 }
+        );
     }
 }
 // receive form data
+
 
 
 // validate

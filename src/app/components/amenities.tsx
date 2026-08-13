@@ -24,10 +24,8 @@ export default function Amenities() {
           <ul className="amenity-list">
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Coffee machine</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Hot water kettle</li>
-            <li className="amenity-item"><CheckIcon className="amenity-icon" /> Ice trays</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Pots and pans</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Bowls, cups, plates, utensils</li>
-            <li className="amenity-item"><CheckIcon className="amenity-icon" /> Wine glasses</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Microwave</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Oven</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Stove top</li>
@@ -59,7 +57,6 @@ export default function Amenities() {
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Public Beach Access</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Beach Essentials</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Hot Tub</li>
-            <li className="amenity-item"><CheckIcon className="amenity-icon" /> Kayaks (x2) with Life Jackets</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Outdoor Dining Area</li>
           </ul>
         </section>
