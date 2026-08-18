@@ -39,16 +39,16 @@ enum BookingStatus {
   CANCELLED
 }
 
-model BlockedDate {
-  id        Int      @id @default(autoincrement())
-  startDate DateTime
-  endDate   DateTime
+// model BlockedDate {
+//   id        Int      @id @default(autoincrement())
+//   startDate DateTime
+//   endDate   DateTime
 
-  notes String?
+//   notes String?
 
-  unitId Int
-  unit   Unit @relation(fields: [unitId], references: [id])
-}
+//   unitId Int
+//   unit   Unit @relation(fields: [unitId], references: [id])
+// }
 
 model Unit {
   id           Int           @id @default(autoincrement())

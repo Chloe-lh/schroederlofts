@@ -1,6 +1,55 @@
+.message{
+    margin-top: 300px;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-family: var(--font-subheading);
+}
+.admin-page{
+    margin-top: 300px;
+    padding: 1rem 2rem;
+}
 .bookings-section{
-    background-color: (--color-surface-strong);
-    margin-top: 100px;
-    padding: 1rem 1rem;
-
+    background-color: var(--color-surface-strong);
+    padding: 20px;
+    
+}
+.booking-card{
+    background-color: white;
+    padding:20px;
+    border-radius: 6px;
+}
+.delete-button{
+    background-color: var(--color-airbnb);
+    border-radius:6px;
+    padding:10px 15px;
+    color:white;
+}
+.confirm-button{
+    display:flex;
+    align-items: center;
+    gap:4px;
+    background-color: var(--color-footer);
+    color:white;
+    border-radius:6px;
+    padding:10px 15px;
+}
+.edit-button{
+    display:flex;
+    align-items: center;
+    gap:4px;
+    background-color: var(--color-nav);
+    color:white;
+    border-radius:6px;
+    padding:10px 15px;
+}
+.icon{
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
 }
