@@ -13,7 +13,13 @@ export default function Footer () {
             </Link>
             <p>Phone: +1 250-353-1651</p>
             </section>
+            <section className="Chloe-rep text-lg">
+            <h2 className="text-3xl text-(--color-nav-text)">we LOVE local</h2>
+            <p> Even this site is local! This site was made by our daughter <strong>Chloe Haynes</strong>. Shes a computer science new grad - check out her other work!</p>    
+            </section>
+
             </div>
+            
         </footer>
     );
 
