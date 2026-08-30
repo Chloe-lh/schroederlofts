@@ -35,7 +35,13 @@ export async function PATCH(
     try{
         const { id } = await params;
         const body = await request.json();
-        const data = { ...body, };
+        const data: any = {
+            firstName: body.firstName,
+            lastName: body.lastName,
+            email: body.email,
+            phone: body.phone,
+            guests: body.guests,
+        };
 
         if (body.checkIn){
             data.checkIn = new Date(body.checkIn)
@@ -44,17 +50,31 @@ export async function PATCH(
             data.checkOut = new Date(body.checkOut)
         }
 
+        if (body.unitId) {
+            data.unit = {
+                connect: {
+                    id: Number(body.unitId),
+                },
+            };
+        }
+
         const booking = await prisma.booking.update({
             where: {
                 id:Number(id),
             },
+
             data,
+            
+            include: {
+                unit: true,
+            },
         });
         return NextResponse.json(booking, {status:200});
     }catch(err){
         return Response.json(
-            {success:false},
-            {status:500}
+            {success:false, error:err},
+            {status:500},
+
         )
     }
 }

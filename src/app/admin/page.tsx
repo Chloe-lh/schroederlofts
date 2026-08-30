@@ -6,7 +6,7 @@ import "../globals.css";
 import EditBookingModal from "../components/editModal";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
-
+import { FaceFrownIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react";
 export default function Admin() {
   const [bookings, setBookings] = useState<any[]>([]);
@@ -67,6 +67,15 @@ export default function Admin() {
     }
   };
 
+  const confirmBooking = async (id:number) => {
+    method:"PATCH",
+    headers: {
+      "Content-Type":"application/json",
+    },
+    body: JSON.stringify(data),
+    
+  }
+
   return (
     <div className="admin-page">
       <h2 className="text-5xl p-6">Bookings</h2>
@@ -112,10 +121,25 @@ export default function Admin() {
             </div>
 
             <div className="button-group">
-              <button className="confirm-button">
+              {booking.status === "PENDING" && (
+                <button className="confirm-button">
                 <CheckIcon className="icon" />
                 Confirm booking
               </button>
+              )}
+              {booking.status === "CONFIRMED" && (
+                <button className="pending-button">
+                <CheckIcon className="icon" />
+                Mark as Pending
+              </button>
+              )}
+              {booking.status === "CANCELLED" && (
+                <button className="pending-button">
+                <FaceFrownIcon className="icon" />
+                Cancelled
+              </button>
+              )}
+              
 
               <button
                 className="edit-button"

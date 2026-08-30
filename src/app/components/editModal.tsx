@@ -10,7 +10,7 @@ type Booking = {
   phone: string;
   unit: {
     id: number;
-    phone: string;
+    name: string;
   };
   guests: number;
   checkIn: string;
@@ -29,7 +29,7 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
     lastName: booking.lastName,
     email: booking.email,
     phone: booking.phone,
-    unitId: booking.unit.id,
+    unitId: booking.unitId,
     guests: booking.guests,
     checkIn: booking.checkIn.slice(0, 10),
     checkOut: booking.checkOut.slice(0, 10),
@@ -86,7 +86,6 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
                 name="checkIn"
                 type="date"
                 onChange={handleChange}
-                required
               />
             </div>
             <div>
@@ -96,7 +95,6 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
                 name="checkOut"
                 type="date"
                 onChange={handleChange}
-                required
               />
             </div>
           </div>
@@ -109,7 +107,6 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                required
               />
             </div>
 
@@ -120,7 +117,6 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                required
               />
             </div>
           </div>
@@ -133,7 +129,6 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
               type="email"
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </div>
 
