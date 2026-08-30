@@ -135,7 +135,7 @@ export default function Admin() {
           </div>
         ))}
       </div>
-              {editingBooking && (
+        {editingBooking && (
             <EditBookingModal
                 booking={editingBooking}
                 onClose={() => setEditingBooking(null)}
