@@ -17,18 +17,18 @@ export default function NavBar() {
           The Lofts at Schroeder Creek
         </h1>
 
-        {/* Desktop menu */}
+        /* Desktop menu
         <div className="hidden md:flex gap-3 text-lg">
           <Link href="/booking">Book</Link>
           {/* <Link href="/location">Location</Link>
           <Link href="/contact">Explore</Link> */}
-        </div>
+        </div> 
 
-        {/* Mobile button */}
+        Mobile button
         <button
           className="md:hidden text-3xl"
           onClick={() => setIsOpen(!isOpen)}
-        >
+        >s
           ☰
         </button>
       </div>
@@ -45,3 +45,14 @@ export default function NavBar() {
     </nav>
   );
 }
+
+
+// {/* Mobile menu */}
+//       {isOpen && (
+//         <div className="flex flex-col px-6 pb-4 md:hidden">
+//           <Link href="/">Book</Link>
+//           {/* <Link href="/booking">Book</Link> */}
+//           <Link href="/location">Location</Link>
+//           <Link href="/contact">Explore</Link>
+//         </div>
+//       )}

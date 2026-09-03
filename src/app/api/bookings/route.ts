@@ -1,6 +1,14 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma";
-import { cookies } from "next/headers";
+import nodemailer from "nodemailer";
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
 //create/read bookings
 // Create one booking
 export async function POST(request: Request){
@@ -51,6 +59,25 @@ export async function POST(request: Request){
                 
             },
             });
+
+            // await transporter.sendMail({
+            //     from: process.env.EMAIL_USER,
+            //     to: email,
+            //     subject: `Confirmation email from The Lofts at Schroeder Creek`,
+            //     html: `
+            //         <h2>We've received your booking request!</h2>
+                    
+            //         <p>Thank you for booking with us! Jim and Jana have 
+            //         received your booking request and will reach out 
+            //         to confirm your dates and organize payment</p>
+
+            //         <p>If anything comes up or you would like to cancel your booking, 
+            //             please feel let us know by replying to this email</p>
+
+            //         <p>this is an automated email, but you'll be in contact with Jana from now on.</p>"
+
+            //     `,
+            // })
         return NextResponse.json(booking, { status:201 });
     }catch(er){
         return NextResponse.json(
