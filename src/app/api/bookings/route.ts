@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma";
 import nodemailer from "nodemailer";
+import { cookies } from "next/headers";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
