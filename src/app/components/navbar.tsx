@@ -24,24 +24,24 @@ export default function NavBar() {
           <Link href="/contact">Explore</Link> */}
         </div> 
 
-        Mobile button
-        <button
-          className="md:hidden text-3xl"
-          onClick={() => setIsOpen(!isOpen)}
-        >s
+        
+        {/* <button
+          className="mobile-button md:hidden text-3xl"
+          onClick={() => setIsOpen(isOpen)}
+        >
           ☰
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
+      {/* {isOpen && (
         <div className="flex flex-col px-6 pb-4 md:hidden">
           <Link href="/">Book</Link>
-          {/* <Link href="/booking">Book</Link> */}
-          {/* <Link href="/location">Location</Link> */}
-          {/* <Link href="/contact">Explore</Link> */}
+          <Link href="/booking">Book</Link> 
+          <Link href="/location">Location</Link>
+          <Link href="/contact">Explore</Link>
         </div>
-      )}
+      )} */}
     </nav>
   );
 }
