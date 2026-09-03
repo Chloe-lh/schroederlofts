@@ -29,7 +29,7 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
     lastName: booking.lastName,
     email: booking.email,
     phone: booking.phone,
-    unitId: booking.unitId,
+    unit: booking.unit,
     guests: booking.guests,
     checkIn: booking.checkIn.slice(0, 10),
     checkOut: booking.checkOut.slice(0, 10),
@@ -151,12 +151,12 @@ export default function EditBookingModal({ booking, onClose, onSave }: Props) {
               <select
                 id="unitId"
                 name="unitId"
-                value={formData.unitId}
+                value={formData.unit.name}
                 onChange={handleChange}
               >
                 <option value="">Select a unit</option>
-                <option value="1">Cedar Loft</option>
-                <option value="2">Maple Loft</option>
+                <option value="Cedar">Cedar Loft</option>
+                <option value="Maple">Maple Loft</option>
               </select>
             </div>
 

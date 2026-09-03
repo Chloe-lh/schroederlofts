@@ -7,12 +7,48 @@ import EditBookingModal from "../components/editModal";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import { FaceFrownIcon } from "@heroicons/react/24/outline"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
 export default function Admin() {
   const [bookings, setBookings] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
   const [editingBooking, setEditingBooking] = useState<any | null>(null);
+  const [password, setPassword] = useState("");
+  const [loggingIn, setLoggingIn] = useState(true);
+
+
+  const login = async() => {
+    try{
+      const response = await fetch("/api/auth", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ password }),
+    });
+      if(response.ok){
+        setAuthenticated(true);
+        setPassword("");
+      }else{
+        alert("Incorrect password");
+        setPassword("");
+        return;
+      }
+      
+
+    }catch(er){
+      console.log(er);
+      alert("Something went wrong! Tell Chloe to look into this")
+
+    }finally{
+      setLoggingIn(false)
+
+    }
+  };
   useEffect(() => {
+    if(!authenticated) return;
+
     async function getBookings() {
       const response = await fetch("/api/bookings");
       const data = await response.json();
@@ -27,12 +63,35 @@ export default function Admin() {
     }
 
     getBookings();
-  }, []);
+  }, [authenticated]);
 
+  if(!authenticated){
+    return(
+      <div className="auth text-xl">
+        <h1>Whats the password HUH?</h1>
+          <input
+              className="password-input"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                      login();
+                  }
+              }}
+          />
+
+        <button onClick={login} disabled={loading}>
+          {loggingIn ? "Log":"Login"}
+        </button>
+      </div>
+    );
+  }
   if (loading) {
     return (
       <div className="message text-3xl">
-        <h1>Loading bookings... stick with me here..</h1>;
+        <h1>Loading bookings... stick with me here..</h1>
       </div>
     );
   }
@@ -53,11 +112,6 @@ export default function Admin() {
       const response = await fetch(`/api/bookings/${id}`, {
         method: "DELETE",
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to delete booking");
-      }
-
       // Remove the booking from the page
       setBookings((prevBookings) =>
         prevBookings.filter((booking) => booking.id !== id),
@@ -66,15 +120,55 @@ export default function Admin() {
       console.error("Error deleting booking:", error);
     }
   };
+  
+  const confirmBooking = async(id: number) => {
+    console.log("pressed confirm")
+    try{
+      const response = await fetch(`/api/bookings/${id}`, {
+        method:"PATCH",
+        headers: {
+          "Content-Type":"application/json",
+        },
+        body: JSON.stringify({
+          status: "CONFIRMED",
+        })
+      });
+       const updatedBooking = await response.json();
 
-  const confirmBooking = async (id:number) => {
-    method:"PATCH",
-    headers: {
-      "Content-Type":"application/json",
-    },
-    body: JSON.stringify(data),
-    
-  }
+        setBookings((prevBookings) =>
+            prevBookings.map((booking) =>
+                booking.id === id ? updatedBooking : booking
+            )
+        );
+      
+    } catch (error){
+      console.error("Error confirming booking: ", error)
+      alert("Sorry! Could not confirm booking. Tell Chloe to look into this")
+    }
+  };
+  const markPending = async(id: number) => {
+    try{
+      const response = await fetch(`/api/bookings/${id}`, {
+        method:"PATCH",
+        headers: {
+          "Content-Type":"application/json",
+        },
+        body: JSON.stringify({
+          status: "PENDING",
+        })
+      });
+      const updatedBooking = await response.json();
+
+      setBookings((prevBookings) =>
+          prevBookings.map((booking) =>
+              booking.id === id ? updatedBooking : booking
+          )
+      );
+    } catch (error){
+      console.error(error)
+      alert("Sorry! Tell Chloe to look into this")
+    }
+  };
 
   return (
     <div className="admin-page">
@@ -122,13 +216,15 @@ export default function Admin() {
 
             <div className="button-group">
               {booking.status === "PENDING" && (
-                <button className="confirm-button">
+                <button className="confirm-button" 
+                  onClick={() => confirmBooking(booking.id)}>
                 <CheckIcon className="icon" />
                 Confirm booking
               </button>
               )}
               {booking.status === "CONFIRMED" && (
-                <button className="pending-button">
+                <button className="pending-button"
+                  onClick = {() => markPending(booking.id)}>
                 <CheckIcon className="icon" />
                 Mark as Pending
               </button>

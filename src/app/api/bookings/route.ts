@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma";
-
+import { cookies } from "next/headers";
 //create/read bookings
 // Create one booking
 export async function POST(request: Request){
@@ -52,16 +52,23 @@ export async function POST(request: Request){
             },
             });
         return NextResponse.json(booking, { status:201 });
-    }catch(err){
-        console.error("Error creating booking: ", err)
+    }catch(er){
         return NextResponse.json(
-            {success:false},
-            {status:500}
+            {error:er},
+            {status:500},
         )
     }
 }
 // Get ALL bookings
 export async function GET() {
+    const cookieStore = await cookies();
+    const session = cookieStore.get("admin_session");
+    if (session?.value !== "authenticated") {
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
+    }
     try {
         const bookings = await prisma.booking.findMany({
             include: {
@@ -70,13 +77,12 @@ export async function GET() {
         });
 
         return NextResponse.json(bookings);
-    } catch (err) {
-        console.error("Error fetching bookings:", err);
-
+    }catch(er){
+        console.error(er)
         return NextResponse.json(
-            { success: false, error: "Failed to fetch bookings" },
-            { status: 500 }
-        );
+            {error:"Failed to get bookings"},
+            {status:500},
+        )
     }
 }
 // receive form data

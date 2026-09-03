@@ -44,15 +44,23 @@
 /* Status */
 
 .status {
-    background-color: aqua;
+    background-color: var(--color-orange);
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color:var(--color-nav-text);
     font-weight: bold;
 }
 
 /* Stay information */
+.auth{
+    margin-top:200px;
+    font-size: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    align-items:center;
 
+}
 .booking-info {
     display: flex;
     gap: 60px;
@@ -102,6 +110,16 @@
     border-radius:6px;
     padding:10px 15px;
     color:white;
+}
+.pending-button{
+    display:flex;
+    align-items: center;
+    gap:4px;
+    background-color: var(--color-heading);
+    color:white;
+    border-radius:6px;
+    padding:10px 15px;
+
 }
 .confirm-button{
     display:flex;

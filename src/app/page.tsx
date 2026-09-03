@@ -42,8 +42,7 @@ export default function Home() {
                 <h3 className="font-semibold mb-2 text-2xl">Spacious & Comfortable</h3>
                 <p>
                   Each 650 sq. ft. suite accommodates up to 4 guests and includes a
-                  full kitchen, living room, private bedroom, bathroom, and air
-                  conditioning.
+                  full kitchen, living room, bedroom, and bathroom
                 </p>
               </div>
 
