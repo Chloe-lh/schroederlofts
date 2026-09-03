@@ -17,7 +17,6 @@ export default function NavBar() {
           The Lofts at Schroeder Creek
         </h1>
 
-        /* Desktop menu
         <div className="hidden md:flex gap-3 text-lg">
           <Link href="/booking">Book</Link>
           {/* <Link href="/location">Location</Link>
