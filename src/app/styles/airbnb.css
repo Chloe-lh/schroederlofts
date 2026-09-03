@@ -1,0 +1,12 @@
+.airbnb-section{
+    border-radius: 0.75rem;
+    text-align: center;
+    
+    padding: 3rem 1.5rem;
+}
+
+.airbnb-card{
+    background-color:white;
+    width:auto;
+    height:auto;
+}

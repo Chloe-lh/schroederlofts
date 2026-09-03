@@ -24,7 +24,6 @@ export default function Amenities() {
           <ul className="amenity-list">
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Coffee machine</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Hot water kettle</li>
-            <li className="amenity-item"><CheckIcon className="amenity-icon" /> Ice trays</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Pots and pans</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Bowls, cups, plates, utensils</li>
             <li className="amenity-item"><CheckIcon className="amenity-icon" /> Microwave</li>

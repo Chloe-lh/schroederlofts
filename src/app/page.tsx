@@ -6,6 +6,7 @@ import rainbow from "./assets/rainbow.jpg";
 import Carousel from "./components/carousel";
 import Amenities from "./components/amenities";
 import Contact from "./components/contact";
+import AirBnB from "./components/airbnb";
 //public\images\cedar\bathroom.jpeg
 const cedarImages = [
   "/images/cedar/bathroom.jpeg",
@@ -41,15 +42,15 @@ export default function Home() {
                 <h3 className="font-semibold mb-2 text-2xl">Spacious & Comfortable</h3>
                 <p>
                   Each 650 sq. ft. suite accommodates up to 4 guests and includes a
-                  full kitchen, living room, private bedroom, bathroom, and pullout couch.
+                  full kitchen, living room, bedroom, and bathroom
                 </p>
               </div>
 
               <div className="feature-card">
                 <h3 className="font-semibold mb-2 text-2xl">Relax & Explore</h3>
                 <p>
-                  Enjoy a hot tub, fire pit, BBQ, kayaks, beach gear, and a peaceful
-                  backyard bordering a forested area.
+                  Enjoy a hot tub, fire pit, BBQ, beach gear, and a peaceful
+                  backyard bordering a forested area. 
                 </p>
               </div>
             </div>
@@ -79,19 +80,20 @@ export default function Home() {
       <div className="gallery-section">
         <section className="gallery-block">
           <h2 className="gallery-title">Cedar Loft</h2>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <Carousel images={cedarImages} />
           </div>
         </section>
 
         <section className="gallery-block">
           <h2 className="gallery-title">Maple Loft</h2>
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <Carousel images={cedarImages} />
           </div>
         </section>
 
         <Amenities />
+        <AirBnB/>
       </div>
     </div>
   );

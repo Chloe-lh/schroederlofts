@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma";
 import nodemailer from "nodemailer";
+import { cookies } from "next/headers";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -22,40 +23,41 @@ export async function POST(request: Request){
             checkOut,
             guests,
             unitId,
-            totalPrice
+            message
             } = await request.json();
+            console.log("unitId received:", unitId);
         if (
             !firstName ||
             !lastName ||
             !email ||
-            !phone ||
             !checkIn ||
             !checkOut ||
-            !guests ||
-            !unitId ||
-            !totalPrice
+            !guests
         ) {
             return NextResponse.json(
                 { error: "Missing required fields." },
                 { status: 400 }
             );
         }
-        await prisma.booking.create({
+        const booking = await prisma.booking.create({
             data: {
                 firstName,
                 lastName,
                 email,
                 phone,
+                message,
+
                 checkIn: new Date(checkIn),
                 checkOut: new Date(checkOut),
+
                 guests,
-                totalPrice,
 
                 unit: {
                 connect: {
                     id: unitId,
                 },
                 },
+                
             },
             });
 
@@ -78,33 +80,41 @@ export async function POST(request: Request){
             //     `,
             // })
         return NextResponse.json(booking, { status:201 });
-    }catch(err){
-        console.error("Error creating booking: ", err)
-        return Response.json(
-            {success:false},
-            {status:500}
+    }catch(er){
+        return NextResponse.json(
+            {error:er},
+            {status:500},
         )
     }
 }
-// Get ALL bookins
-export async function GET(){
-    try{
-        const bookings = prisma.booking.findMany({
+// Get ALL bookings
+export async function GET() {
+    const cookieStore = await cookies();
+    const session = cookieStore.get("admin_session");
+    if (session?.value !== "authenticated") {
+        return NextResponse.json(
+            { error: "Unauthorized" },
+            { status: 401 }
+        );
+    }
+    try {
+        const bookings = await prisma.booking.findMany({
             include: {
                 unit: true,
-            }
-        })
-        return NextResponse.json(bookings, {
-            status:200,
+            },
         });
-    }catch(err){
-        return Response.json(
-            {success:false},
-            {status:500}
+
+        return NextResponse.json(bookings);
+    }catch(er){
+        console.error(er)
+        return NextResponse.json(
+            {error:"Failed to get bookings"},
+            {status:500},
         )
     }
 }
 // receive form data
+
 
 
 // validate

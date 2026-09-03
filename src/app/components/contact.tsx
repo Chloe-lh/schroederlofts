@@ -34,10 +34,7 @@ export default function Contact() {
             setForm({name: "", email:"", message:""});
         }else{
             alert("hmm.. something went wrong");
-        }
-        
-            
-            
+        }    
     }
 
     return (
@@ -65,6 +62,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required />
                 <button type="submit">Send Message</button>
+                
             </form>
         </section>
     )
