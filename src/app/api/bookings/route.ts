@@ -82,7 +82,7 @@ export async function POST(request: Request){
         return NextResponse.json(booking, { status:201 });
     }catch(er){
         return NextResponse.json(
-            {error:er},
+            {error: "booking creation error"},
             {status:500},
         )
     }

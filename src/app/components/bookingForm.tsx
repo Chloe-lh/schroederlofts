@@ -31,6 +31,7 @@ export default function BookingForm() {
   }
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        
         const response = await fetch("/api/bookings", {
             method:"POST",
             headers: {
@@ -42,11 +43,12 @@ export default function BookingForm() {
         const data = await response.json();
         console.log(data)
 
-        if(data.success){
+        if(response.ok){
             alert("Inquiry sent!");
             setForm(initialForm);
         }else{
-            alert("hmm.. something went wrong");
+          console.log("someting wrong")
+            alert("hmm.. something went wrong sending your booking");
         }
          
     }
