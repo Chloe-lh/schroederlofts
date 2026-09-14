@@ -16,14 +16,42 @@ const cedarImages = [
 export default function Home() {
   return (
     <div className="home-page">
-      <div className="hero">
-          <Image
+      <div className="hero-images">
+          {/* <Image
             src={rainbow}
             alt="rainbow background image"
-            fill
             priority
             className="object-cover"
+          /> */}
+          <Image
+            src="/images/ht-2.JPG"
+            alt="boatpic"
+            width={500}
+            height={500}
+            priority
           />
+          <Image
+            src="/images/beach-1.JPG"
+            alt="boatpic"
+            width={500}
+            height={500}
+            priority
+          />
+          <Image
+            src="/images/gate.jpeg"
+            alt="boatpic"
+            width={500}
+            height={500}
+            priority
+          />
+          <Image
+            src="/images/beach-2.JPG"
+            alt="boatpic"
+            width={500}
+            height={500}
+            priority
+          />
+          
       </div>
 
       <div className="section-wrap">
@@ -64,15 +92,20 @@ export default function Home() {
           </section>
 
           <section>
+            <div className="attention font-bold">
+            <h1>ATTENTION!!!</h1>
+            <p>This site is currently being developed by our daughter developer, Chloe. More features are soon to come and if you find a bug please report it in the Contact Box below. Thanks!</p>
             <Contact />
+            </div>
           </section>
         </div>
       </div>
 
       <div className="notice border-2 ">
-        <p className="text-lg">Long term stays allowed!</p>
+        <p className="font-semibold text-xl">Long term stays allowed!</p>
         <p className="">Enjoy discounted weekly and monthly rates for extended stays. Contact us for more details</p>
-        <p className="text-lg">Want to rent both suites?</p>
+        <br></br>
+        <p className="font-semibold text-xl">Want to rent both suites?</p>
         <p className="">Planning a larger gathering? Rent both suites together and ask about our
       discounted combined rate.</p>
       </div>

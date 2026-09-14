@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Arch from "../Arch.png"
+import Image from "next/image";
+import { arch } from "os";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +12,7 @@ export default function NavBar() {
   return (
     <nav className="fixed z-10 w-full bg-(--color-nav) text-(--color-nav-text) shadow-lg">
       <div className="flex items-center justify-between px-6 py-4">
-        <div className="text-sm font-semibold uppercase tracking-[0.25em]">
-          Lofts
-        </div>
+        <Image src={Arch} alt="browser icon" priority></Image>
 
         <h1 className="text-xl md:text-4xl">
           The Lofts at Schroeder Creek
