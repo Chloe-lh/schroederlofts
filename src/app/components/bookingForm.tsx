@@ -2,7 +2,6 @@
 import { useState } from "react";
 import "../styles/bookingform.css";
 import "../globals.css";
-
 const initialForm = {
     firstName: "",
     lastName: "",
@@ -17,6 +16,7 @@ const initialForm = {
 
 export default function BookingForm() {
   const [form, setForm] = useState(initialForm);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -29,6 +29,7 @@ export default function BookingForm() {
             ? Number(value) : value,
     });
   }
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
@@ -44,7 +45,7 @@ export default function BookingForm() {
         console.log(data)
 
         if(response.ok){
-            alert("Inquiry sent!");
+            setShowConfirm(true);
             setForm(initialForm);
         }else{
           console.log("someting wrong")
@@ -55,9 +56,8 @@ export default function BookingForm() {
   return (
     <section className="booking-section">
       <h1 className="text-3xl py-4">Create Booking Inquiry</h1>
-      <p className="">Once you submit a booking inquiry, expect a confirmation email in your inbox. 
-        
-      </p>
+      {/* <p className="">Once you submit a booking inquiry, expect a confirmation email in your inbox. 
+      </p> */}
 
       <form onSubmit={handleSubmit}>
         {/* CheckIn + Check out */}
@@ -180,6 +180,33 @@ export default function BookingForm() {
 
         <button className="text-lg" type="submit">Submit Inquiry</button>
       </form>
+      {showConfirm && (
+        <div className="modal-overlay">
+          <div className="confirm-modal">
+            <h2 className="text-4xl">ATTENTION</h2>
+            <p>
+              We have received your booking inquiry! Please note that your booking
+              is currently <strong>pending</strong>.
+            </p>
+
+            <p>
+              We will reach out by <strong>email (theloftsatschroedercreek@gmail.com) </strong> to confirm your booking
+              details and arrange payment.
+            </p>
+
+            <p>
+              Your requested dates have been reserved in our system, so don't fret!
+            </p>
+            <br></br>
+            <button
+              className="modal-button"
+              onClick={() => setShowConfirm(false)}
+            >
+              I understand
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

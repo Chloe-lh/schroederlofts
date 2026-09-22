@@ -53,5 +53,22 @@ h1{
     border-radius: 0.75rem;
     padding: 1rem;
     color:white;
-    background: var(--color-footer);
+    background: var(--foreground);
+}
+.modal-overlay{
+    position:fixed;
+    z-index:100;
+    inset:0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.confirm-modal{
+    background-color: var(--color-accent-strong);
+    color:white;
+    border-radius: 25px;
+    padding:20px;
+}
+.confirm-modal button{
+    width:100%;
 }

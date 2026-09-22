@@ -12,7 +12,12 @@ const cedarImages = [
   "/images/cedar/bathroom.jpeg",
   "/images/cedar/kitchen.jpeg",
   "/images/cedar/living-room.jpeg",
+  "/images/cedar/bedroom.jpg"
 ];
+const mapleImages = [
+  "/images/maple/kitchen.jpg",
+  "/images/maple/bedroom.jpg"
+]
 export default function Home() {
   return (
     <div className="home-page">
@@ -94,7 +99,7 @@ export default function Home() {
           <section>
             <div className="attention font-bold">
             <h1>ATTENTION!!!</h1>
-            <p>This site is currently being developed by our daughter developer, Chloe. More features are soon to come and if you find a bug please report it in the Contact Box below. Thanks!</p>
+            <p>This site is currently being developed by our daughter developer, Chloe. More features are soon to come! If you find a bug please report it in the Contact Box below. Thanks!</p>
             <Contact />
             </div>
           </section>
@@ -121,7 +126,7 @@ export default function Home() {
         <section className="gallery-block">
           <h2 className="gallery-title">Maple Loft</h2>
           <div className="max-w-5xl mx-auto">
-            <Carousel images={cedarImages} />
+            <Carousel images={mapleImages} />
           </div>
         </section>
 

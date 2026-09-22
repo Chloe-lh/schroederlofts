@@ -53,13 +53,28 @@
 }
 
 /* Stay information */
-.auth{
+.container-auth{
     margin-top:200px;
-    font-size: 1.4rem;
-    align-items: center;
+    display:flex;
     justify-content: center;
     align-items:center;
-
+}
+.auth{
+    border-width:5px;
+    border-color: var(--color-airbnb);
+    font-size: 1.4rem;
+    align-items: center;
+    border-radius:25px;
+    padding:25px;
+}
+.auth > input{
+    background-color: var(--color-nav-text);
+    padding:10px;
+    border-radius: 15px;
+}
+.auth > button{
+    padding:10px;
+    background-color: var(--color-nav-text);
 }
 .booking-info {
     display: flex;

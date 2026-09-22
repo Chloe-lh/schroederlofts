@@ -67,24 +67,25 @@ export default function Admin() {
 
   if(!authenticated){
     return(
-      <div className="auth text-xl">
-        <h1>Whats the password HUH?</h1>
-          <input
-              className="password-input"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                      login();
-                  }
-              }}
-          />
-
-        <button onClick={login} disabled={loading}>
-          {loggingIn ? "Log":"Login"}
-        </button>
+      <div className="container-auth">
+        <div className="auth text-xl">
+          <h1>Whats the password HUH?</h1>
+            <input
+                className="password-input"
+                type="password"
+                placeholder="Secret Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                        login();
+                    }
+                }}
+            />
+          <button onClick={login}>
+            Login
+          </button>
+        </div>
       </div>
     );
   }
