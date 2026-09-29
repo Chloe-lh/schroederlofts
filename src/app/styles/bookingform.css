@@ -55,20 +55,48 @@ h1{
     color:white;
     background: var(--foreground);
 }
-.modal-overlay{
-    position:fixed;
-    z-index:100;
-    inset:0;
-    display:flex;
+.modal-overlay {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.5);
 }
-.confirm-modal{
-    background-color: var(--color-accent-strong);
-    color:white;
-    border-radius: 25px;
-    padding:20px;
+
+.confirm-modal {
+    position: relative;
+
+    background-color: var(--color-nav-text);
+    color: var(--color-heading);
+
+    padding: 2rem;
+    border-radius: 1rem;
+
+    text-align: center;
+    width: min(90%, 550px);
 }
-.confirm-modal button{
-    width:100%;
+
+.confirm-modal h2 {
+    margin-bottom: 1.5rem;
+}
+
+.modal-button {
+    width: 80%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    background: none;
+    border: none;
+    color: white;
+
+    font-size: 2rem;
+    cursor: pointer;
 }
