@@ -20,8 +20,8 @@ export default function NavBar() {
 
         <div className="hidden md:flex gap-3 text-lg">
           <Link href="/booking">Book</Link>
-          {/* <Link href="/location">Location</Link>
-          <Link href="/contact">Explore</Link> */}
+          {/* <Link href="/location">Location</Link> */}
+          <Link href="/explore">Explore</Link>
         </div> 
 
         

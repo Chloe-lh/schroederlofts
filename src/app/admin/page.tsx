@@ -3,7 +3,7 @@
 import Image from "next/image";
 import "../styles/admin.css";
 import "../globals.css";
-import EditBookingModal from "../components/editModal";
+import EditBookingModal from "../components/EditModal/editModal";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import { FaceFrownIcon } from "@heroicons/react/24/outline"

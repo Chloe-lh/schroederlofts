@@ -60,30 +60,30 @@ export async function POST(request: Request){
             },
             });
 
-            await transporter.sendMail({
-                from: process.env.EMAIL_USER,
-                to: process.env.EMAIL_USER,
-                subject: `New B&B Booking`,
-                html: `
-                    <h2>You have received a new booking!!!!</h2>
+            // await transporter.sendMail({
+            //     from: process.env.EMAIL_USER,
+            //     to: process.env.EMAIL_USER,
+            //     subject: `New B&B Booking`,
+            //     html: `
+            //         <h2>You have received a new booking!!!!</h2>
                     
-                    <p><strong>Name: </strong> ${firstName} ${lastName}</p>
-                    <p><strong>Email: </strong>${email}</p>
-                    <p><strong>Phone number: </strong>${phone}</p>
-                    <p><strong>Check In: </strong>${checkIn}</p>
-                    <p><strong>Check Out: </strong>${checkOut}</p>
-                    <p><strong># Guests: </strong>${guests}</p>
-                    <p><strong>Message: </strong>${message}</p>
+            //         <p><strong>Name: </strong> ${firstName} ${lastName}</p>
+            //         <p><strong>Email: </strong>${email}</p>
+            //         <p><strong>Phone number: </strong>${phone}</p>
+            //         <p><strong>Check In: </strong>${checkIn}</p>
+            //         <p><strong>Check Out: </strong>${checkOut}</p>
+            //         <p><strong># Guests: </strong>${guests}</p>
+            //         <p><strong>Message: </strong>${message}</p>
 
-                    <p>This booking is NOT confirmed yet, only reserved. Reach out to the above contact to organize payment and confirm the booking.
-                        Dont forget! You can confirm this booking, edit it, or cancel it on the admin page</p>
+            //         <p>This booking is NOT confirmed yet, only reserved. Reach out to the above contact to organize payment and confirm the booking.
+            //             Dont forget! You can confirm this booking, edit it, or cancel it on the admin page</p>
 
-                    <p>this is an automated email.</p>
-                    <p>Love ya</p>
-                    <p> - Chloe</p>
+            //         <p>this is an automated email.</p>
+            //         <p>Love ya</p>
+            //         <p> - Chloe</p>
 
-                `,
-            })
+            //     `,
+            // })
         return NextResponse.json(booking, { status:201 });
     }catch(er){
         return NextResponse.json(
