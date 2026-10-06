@@ -186,8 +186,13 @@ export default function Admin() {
                   {booking.email} · {booking.phone}
                 </p>
               </div>
-
-              <span className="status">{booking.status}</span>
+              {booking.status == "PENDING" && (
+                <span className="pending-status">{booking.status}</span>
+              )}
+              {booking.status == "CONFIRMED" && (
+                <span className="confirmed-status">{booking.status}</span>
+              )}
+              
             </div>
 
             <div className="booking-info">
