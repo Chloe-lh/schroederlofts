@@ -1,5 +1,5 @@
 "use client";
-import "../styles/editModal.css";
+import "./editModal.css";
 import { useState } from "react";
 
 type Booking = {

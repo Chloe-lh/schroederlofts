@@ -1,12 +1,10 @@
 import Image from "next/image";
 import "./globals.css";
-import "./styles/contact.css";
 import "./styles/home.css";
-import rainbow from "./assets/rainbow.jpg";
-import Carousel from "./components/carousel";
-import Amenities from "./components/amenities";
-import Contact from "./components/contact";
-import AirBnB from "./components/airbnb";
+import Carousel from "./components/ImageCarousel/carousel";
+import Amenities from "./components/Amenities/amenities";
+import Contact from "./components/ContactBox/contact";
+import AirBnB from "./components/Airbnb/airbnb";
 //public\images\cedar\bathroom.jpeg
 const cedarImages = [
   "/images/cedar/bathroom.jpeg",

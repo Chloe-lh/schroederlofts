@@ -10,8 +10,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-//create/read bookings
-// Create one booking
+// Create ONE booking
 export async function POST(request: Request){
     try{
         const {
@@ -63,19 +62,25 @@ export async function POST(request: Request){
 
             // await transporter.sendMail({
             //     from: process.env.EMAIL_USER,
-            //     to: email,
-            //     subject: `Confirmation email from The Lofts at Schroeder Creek`,
+            //     to: process.env.EMAIL_USER,
+            //     subject: `New B&B Booking`,
             //     html: `
-            //         <h2>We've received your booking request!</h2>
+            //         <h2>You have received a new booking!!!!</h2>
                     
-            //         <p>Thank you for booking with us! Jim and Jana have 
-            //         received your booking request and will reach out 
-            //         to confirm your dates and organize payment</p>
+            //         <p><strong>Name: </strong> ${firstName} ${lastName}</p>
+            //         <p><strong>Email: </strong>${email}</p>
+            //         <p><strong>Phone number: </strong>${phone}</p>
+            //         <p><strong>Check In: </strong>${checkIn}</p>
+            //         <p><strong>Check Out: </strong>${checkOut}</p>
+            //         <p><strong># Guests: </strong>${guests}</p>
+            //         <p><strong>Message: </strong>${message}</p>
 
-            //         <p>If anything comes up or you would like to cancel your booking, 
-            //             please feel let us know by replying to this email</p>
+            //         <p>This booking is NOT confirmed yet, only reserved. Reach out to the above contact to organize payment and confirm the booking.
+            //             Dont forget! You can confirm this booking, edit it, or cancel it on the admin page</p>
 
-            //         <p>this is an automated email, but you'll be in contact with Jana from now on.</p>"
+            //         <p>this is an automated email.</p>
+            //         <p>Love ya</p>
+            //         <p> - Chloe</p>
 
             //     `,
             // })

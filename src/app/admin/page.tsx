@@ -3,7 +3,7 @@
 import Image from "next/image";
 import "../styles/admin.css";
 import "../globals.css";
-import EditBookingModal from "../components/editModal";
+import EditBookingModal from "../components/EditModal/editModal";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import { FaceFrownIcon } from "@heroicons/react/24/outline"
@@ -186,8 +186,13 @@ export default function Admin() {
                   {booking.email} · {booking.phone}
                 </p>
               </div>
-
-              <span className="status">{booking.status}</span>
+              {booking.status == "PENDING" && (
+                <span className="pending-status">{booking.status}</span>
+              )}
+              {booking.status == "CONFIRMED" && (
+                <span className="confirmed-status">{booking.status}</span>
+              )}
+              
             </div>
 
             <div className="booking-info">

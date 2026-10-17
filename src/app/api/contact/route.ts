@@ -9,15 +9,15 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, message } =
+    const { name, email, message } =
       await req.json();
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: `New BnB Inquiry from ${name}`,
+      subject: `New B&B inquiry from ${name}`,
       html: `
-        <h2>New BnB Inquiry!!!</h2>
+        <h2>Someone has reached out! </h2>
 
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
